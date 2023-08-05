@@ -43,12 +43,7 @@
                                     </a>
                                     
                                 </li>
-                                <li >
-                                    <a class="nav-link text-white {{Route::currentRouteName() == 'admin.posts.users' ? 'bg-secondary' : ''}}" href="{{route('admin.posts.users')}}">
-                                    <i class="fa-solid fa-signs-post mx-2">users</i>
-                                    </a>
-                                    
-                                </li>
+                               
                             </ul>
                         </header>
 
