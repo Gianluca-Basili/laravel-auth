@@ -39,10 +39,10 @@
                                     <a href="{{route('admin.posts.edit',$post->id)}}" class="btn btn-sm btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="#" method="POST" class="d-inline-block">
+                                    <form action="{{route('admin.posts.destroy',$post->id)}}" onsubmit="return confirm('sei sicuro di voler cancellare il post?')" method="POST" class="d-inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

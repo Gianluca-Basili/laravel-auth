@@ -83,6 +83,11 @@ class PostController extends Controller
     {
         $form_data = $request->all();
         
+        $form_data['slug'] = $post->generateSlug($form_data['title']);
+        $post->update($form_data);
+        
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -93,6 +98,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index');
     }
 }
