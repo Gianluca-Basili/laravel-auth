@@ -4,7 +4,17 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mt-5">
-                <h1>I nostri post</h1>
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1>I Nostri Post</h1>
+                    </div>
+                    <div>
+                        <a href="{{route('admin.posts.create')}}" class="btn btn-sm btn-primary">Aggiungi Post</a>
+                    </div>
+
+                </div>
+            </div>
             </div>
             <div class="col-12 mt-5">
                 <table class="table table-striped">
