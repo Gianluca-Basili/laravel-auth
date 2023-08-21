@@ -15,14 +15,26 @@
                 </div>
             </div>
             <div class="col-12">
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{route('admin.posts.store')}}" method="post">
                     @csrf
                     <div class="form-group mt-4">
-                        <input type="text" name="title" id="title" placeholder="Titolo" require>
+                        <input type="text" name="title" id="title" placeholder="Titolo" class="form-control @error('title')is-invalid @enderror" value="{{old('title')}}">
+                        @error('title')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group mt-4">
                         
-                        <textarea class="form-control" name="content" id="content" placeholder="Contenuto"></textarea>
+                        <textarea class="form-control" name="content" id="content" placeholder="Contenuto">{{old('content')}}</textarea>
                     </div>
                     <div class="form-group mt-4">
                         <button type="submit" class="btn btn-success">Salva
