@@ -24,14 +24,17 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:50'
+            'title' => 'required|max:50',
+            'cover_image' => 'image|max:250'
         ];
     }
 
     public function messages(){
         return [
             'title.required' => 'il titolo è obbligatorio',
-            'title.max' => 'il titolo deve essere lungo al massimo :max caratteri'
+            'title.max' => 'il titolo deve essere lungo al massimo :max caratteri',
+            'cover_image.image' => 'il file deve avere una delle seguenti estensioni: jpg, png, jpeg, webp.',
+            'cover_image.max' => 'il nome del file deve essere lungo al massimo :max caratteri'
         ];
     }
 }

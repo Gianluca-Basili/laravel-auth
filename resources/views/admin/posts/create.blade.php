@@ -24,13 +24,17 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{route('admin.posts.store')}}" method="post">
+                <form action="{{route('admin.posts.store')}}" method="post" enctype="mutipart/form-data">
                     @csrf
                     <div class="form-group mt-4">
                         <input type="text" name="title" id="title" placeholder="Titolo" class="form-control @error('title')is-invalid @enderror" value="{{old('title')}}">
                         @error('title')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+                    </div>
+                    <div class="form-group mt-4">
+                       
+                        <input type="file" class="form-control @error('cover_image')is_invalid @enderror" name="cover_image" id="cover_image">
                     </div>
                     <div class="form-group mt-4">
                         
