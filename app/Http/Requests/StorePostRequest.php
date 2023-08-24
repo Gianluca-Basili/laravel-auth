@@ -33,8 +33,10 @@ class StorePostRequest extends FormRequest
         return [
             'title.required' => 'il titolo è obbligatorio',
             'title.max' => 'il titolo deve essere lungo al massimo :max caratteri',
-            'cover_image.image' => 'il file deve avere una delle seguenti estensioni: jpg, png, jpeg, webp.',
+            'cover_image.' => 'il  file deve essere di tipo: jpg, jpeg, png',
             'cover_image.max' => 'il nome del file deve essere lungo al massimo :max caratteri'
+
+            
         ];
     }
 }
