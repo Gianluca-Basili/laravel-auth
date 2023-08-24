@@ -109,7 +109,6 @@ class PostController extends Controller
         $form_data['slug'] = $post->generateSlug($form_data['title']);
         $post->update($form_data);
         
-
         return redirect()->route('admin.posts.index');
     }
 
